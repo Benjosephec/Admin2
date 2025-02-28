@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web1:
+    image: custom-nginx
+    ports:
+      - "80:80"
+    networks:
+      - my-net
+    volumes:
+      - web-volume:/usr/share/nginx/html
+
+  web2:
+    image: custom-nginx
+    ports:
+      - "81:80"
+    networks:
+      - my-net
+    volumes:
+      - web-volume:/usr/share/nginx/html
+
+volumes:
+  web-volume:
+
+networks:
+  my-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.1.0/24
+
