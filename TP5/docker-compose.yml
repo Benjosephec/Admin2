@@ -1,0 +1,9 @@
+services:
+ web:
+  build: .
+  container_name: web
+  ports:
+   "9090:80"
+  volumes:
+    ./www:/var/www/html/www
+    ./blog:/var/www/html/blog
