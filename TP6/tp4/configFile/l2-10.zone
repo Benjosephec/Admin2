@@ -1,0 +1,13 @@
+$ORIGIN l2-10.ephec-ti.be.
+$TTL 3600
+@		IN SOA ns.l2-10.ephec-ti.be. admin.l2-10.ephec-ti.be. (
+		2025032406 ; Serial
+		3600       ; Refresh
+		1800       ; Retry
+		604800     ; Expire
+		86400      ; Minimum TTL
+)
+@		IN NS     ns.l2-10.ephec-ti.be.
+ns		IN A      54.36.181.167
+www		IN A      54.36.181.167 ; Mettre avec le A et ip après aussi fonctionnel
+blog		IN CNAME  www ;
