@@ -1,0 +1,34 @@
+$ORIGIN l2-10.ephec-ti.be.
+$TTL 3600
+@		IN SOA ns.l2-10.ephec-ti.be. admin.l2-10.ephec-ti.be. (
+		2025041103 ; Serial
+		3600       ; Refresh
+		1800       ; Retry
+		604800     ; Expire
+		86400      ; Minimum TTL
+)
+@		IN NS     ns.l2-10.ephec-ti.be.
+		IN MX 10  mail ;
+		IN A      54.36.181.167 ;
+		IN AAAA   2001:41d0:302:2200::5e9b ;
+
+ns		IN A      54.36.181.167 ;
+ns		IN AAAA   2001:41d0:302:2200::5e9b ;
+
+www		IN A      54.36.181.167 ; Mettre avec le A et ip après aussi fonctionnel
+www		IN AAAA   2001:41d0:302:2200::5e9b ;
+
+blog		IN CNAME  www ;
+
+mail		IN A      54.36.181.167 ;
+mail		IN AAAA   2001:41d0:302:2200::5e9b ;
+
+@		IN TXT    "v=spf1 mx -all" ;
+
+_dmarc	IN	TXT "v=DMARC1; p=quarantine; sp=quarantine; fo=0; adkim=r; aspf=r; pct=100; rf=afrf; ri=86400; rua=mailto:dmarc.report@l2-10.ephec-ti.be; ruf=mailto:dmarc.report@l2-10.ephec-ti.be"
+
+mail._domainkey	IN	TXT	( "v=DKIM1; h=sha256; k=rsa; "
+	  "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlaqFejIlVXHu7rgHSJM95fJbrXgW8XN9w6ALCLPZUCT7dat86PwOnQU9P7PqQMuioydeyYqypPGkxiw3n42Gb6DSkFL56MK5jooFPkVZSCoifErY7L6zTA3A95qq2piAy9g0SOYMwTJY932/5zOFp/T5gQX8ifmztStrYMwlOmK8Uixs4tNDx9rILFYw+VBNmJRKfbI5sg+CCf"
+	  "oTmQ+or46TJ4v6zAtzZr3zWH7txPaQWWxS43QgR1Ks+pMxfS/yvW7NWMZ8SB/Gk+OnvPnqIZjP7+lTtEsQn19mCtkCeMmBTQ0vLeqEHsXNIu/HWfkXzwzwLgOswvH5xoaLhwaZnwIDAQAB" )  ; ----- DKIM key mail for l2-10.ephec-ti.be	
+
+zik		IN A      54.36.181.167 ;
